@@ -102,3 +102,138 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For support, email [support@proshop.com](mailto:support@proshop.com) or open an issue in the repository.
+
+## Deployment
+
+### Production Build
+1. Create a production build:
+```bash
+npm run build
+```
+
+2. The build artifacts will be stored in the `build/` directory.
+
+### Deployment Options
+- **Netlify**: Connect your repository to Netlify for automatic deployments
+- **Vercel**: Deploy with Vercel for optimal performance
+- **AWS Amplify**: Use AWS Amplify for scalable hosting
+- **Heroku**: Deploy to Heroku using the following command:
+```bash
+heroku create your-app-name
+git push heroku main
+```
+
+## Troubleshooting Guide
+
+### Common Issues and Solutions
+
+1. **Build Failures**
+   - Clear node_modules and reinstall: `rm -rf node_modules && npm install`
+   - Check for conflicting dependencies in package.json
+   - Ensure all environment variables are properly set
+
+2. **Runtime Errors**
+   - Check browser console for detailed error messages
+   - Verify API endpoints are accessible
+   - Ensure all required environment variables are set
+
+3. **Performance Issues**
+   - Clear browser cache
+   - Check network requests in browser dev tools
+   - Verify image optimization settings
+
+4. **Authentication Problems**
+   - Clear local storage
+   - Check token expiration
+   - Verify API credentials
+
+## Development Guidelines
+
+### Code Style
+- Follow ESLint configuration
+- Use meaningful variable and function names
+- Write comments for complex logic
+- Keep components small and focused
+
+### Git Workflow
+1. Create feature branches from `develop`
+2. Follow conventional commits format
+3. Write meaningful commit messages
+4. Create pull requests for all changes
+
+### Testing
+- Write unit tests for new features
+- Maintain minimum 80% code coverage
+- Test edge cases and error scenarios
+- Run tests before committing: `npm test`
+
+## API Documentation
+
+### Authentication Endpoints
+```javascript
+POST /api/users/login
+POST /api/users/register
+GET /api/users/profile
+```
+
+### Product Endpoints
+```javascript
+GET /api/products
+GET /api/products/:id
+POST /api/products
+PUT /api/products/:id
+DELETE /api/products/:id
+```
+
+### Order Endpoints
+```javascript
+POST /api/orders
+GET /api/orders/:id
+GET /api/orders/myorders
+PUT /api/orders/:id/pay
+```
+
+### Request/Response Format
+```javascript
+// Request
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+// Response
+{
+  "token": "jwt_token",
+  "user": {
+    "id": "user_id",
+    "name": "User Name",
+    "email": "user@example.com"
+  }
+}
+```
+
+## Performance Metrics
+
+### Lighthouse Scores
+- Performance: 90+
+- Accessibility: 95+
+- Best Practices: 95+
+- SEO: 95+
+
+### Load Times
+- First Contentful Paint: < 1.5s
+- Time to Interactive: < 3.5s
+- Largest Contentful Paint: < 2.5s
+
+### Optimization Techniques
+- Code splitting
+- Lazy loading
+- Image optimization
+- Caching strategies
+- Bundle size optimization
+
+### Monitoring
+- Real-time performance monitoring
+- Error tracking
+- User behavior analytics
+- API response time tracking
